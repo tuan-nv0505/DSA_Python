@@ -10,6 +10,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         
+    # Them vao cuoi danh sach
     def insert_last(self, key):
         if self.head is None:
             self.head = Node(key)
@@ -19,6 +20,7 @@ class LinkedList:
                 tmp = tmp.next
             tmp.next = Node(key)
             
+    # Them vao dau danh sach
     def insert_first(self, key):
         if self.head is None:
             self.head = Node(key)
@@ -27,6 +29,7 @@ class LinkedList:
             new_node_first.next = self.head
             self.head = new_node_first
     
+    # Xoa phan tu o cuoi danh sach
     def remove_last(self):
         if self.head is None:
             return
