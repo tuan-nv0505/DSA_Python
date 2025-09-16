@@ -1,4 +1,3 @@
-import random
 
 class Node:
     def __init__(self, key):
@@ -82,11 +81,7 @@ class LinkedList:
         print()
 
 if __name__ == "__main__":
-    ll = LinkedList()
-    for i in range(100):
-        ll.insert_last(random.randint(1, 100))
-    ll.sort()
-    ll.show()
+   pass
 
     
     
