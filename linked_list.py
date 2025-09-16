@@ -1,3 +1,5 @@
+import random
+
 class Node:
     def __init__(self, key):
         self.key = key
@@ -47,13 +49,30 @@ class LinkedList:
             tmp.next = None
 
     def find_node_first(self, key):
-        pass
+        tmp = self.head
+        while tmp is not None and tmp.key != key:
+            tmp = tmp.next
+        return tmp
 
     def find_node_last(self, key):
-        pass
+        tmp = self.head
+        res = None
+        while tmp is not None:
+            if tmp.key == key:
+                res = tmp
+            tmp = tmp.next
+        return res
 
-    def sort(self):
-        pass
+    def find_all(self, key):
+        tmp = self.head
+        nodes = []
+        while tmp is not None:
+            if tmp.key == key:
+                nodes.append(tmp)
+            tmp = tmp.next
+        return nodes
+
+
 
     def show(self):
         tmp = self.head
@@ -61,26 +80,14 @@ class LinkedList:
             print(tmp.key, end=' ')
             tmp = tmp.next
         print()
-            
-            
+
 if __name__ == "__main__":
     ll = LinkedList()
-    
-    for i in range(6, 11, 1):
-        ll.insert_last(i)
-    for i in range(5, 0, -1):
-        ll.insert_first(i)
-        
+    for i in range(100):
+        ll.insert_last(random.randint(1, 100))
+    ll.sort()
     ll.show()
-    
-    for i in range(5):
-        ll.remove_last()
 
-    for i in range(5):
-        ll.remove_first()
-
-    ll.show()
-    
     
     
             
